@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../../../../../.vscode/projects/firstPP_Auth/CSS/signUp.css" />
+    <script src="../../../../../../../.vscode/projects/firstPP_Auth/JS/signUpForm.js"></script>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create an account</h2>
+      <div class="login-link">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+      <form id="signup-form">
+        <div class="form-group">
+          <input type="text" id="firstName" class="form-input" required />
+          <label for="firstName" class="form-label">First Name</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="lastName" class="form-input" required />
+          <label for="lastName" class="form-label">Last Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" class="form-input" required />
+          <label for="email" class="form-label">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="phone" class="form-input" required />
+          <label for="phone" class="form-label">Phone Number</label>
+        </div>
+        <div class="form-group password-container">
+          <input type="password" id="password" class="form-input" required />
+          <label for="password" class="form-label">Enter your password</label>
+          <span
+            class="password-toggle"
+            onclick="togglePasswordVisibility('password')"
+            >&#x1f441;</span
+          >
+        </div>
+        <div class="form-group password-container">
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-input"
+            required
+          />
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <span
+            class="password-toggle"
+            onclick="togglePasswordVisibility('confirmPassword')"
+            >&#x1f441;</span
+          >
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="terms" required />
+          <label for="terms"
+            >I agree to the <a href="#">Terms & Conditions</a></label
+          >
+        </div>
+        <button type="submit" class="submit-button">Create account</button>
+      </form>
+    </div>
+  </body>
+</html>
