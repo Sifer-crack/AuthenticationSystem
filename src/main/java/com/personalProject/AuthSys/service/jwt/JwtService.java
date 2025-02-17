@@ -44,7 +44,7 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    private String generateToken(UserDetails userDetails){
+    public String generateToken(UserDetails userDetails){
         return generateToken(new HashMap<>(), userDetails);
     }
 
