@@ -20,7 +20,7 @@ public class User implements UserDetails {
     private Long id;
     private String name;
     private String lastName;
-    private int phoneNum;
+    private String phoneNum;
     private String email;
     private String password;
 
@@ -29,7 +29,7 @@ public class User implements UserDetails {
 
     public User(){}
 
-    public User(String name, String lastname, String email, int phoneNum, String password) {
+    public User(String name, String lastname, String email, String phoneNum, String password) {
         this.name = name;
         this.lastName = lastname;
         this.email = email;
@@ -37,7 +37,7 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public User(Long id, String name, String lastname, String email, int phoneNum, String password, Roles role) {
+    public User(Long id, String name, String lastname, String email, String phoneNum, String password, Roles role) {
         this.id = id;
         this.name = name;
         this.lastName = lastname;
