@@ -1,6 +1,6 @@
 package com.personalProject.AuthSys.config;
 
-import com.personalProject.AuthSys.model.User;
+
 import com.personalProject.AuthSys.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
