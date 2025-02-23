@@ -1,0 +1,13 @@
+### GET request to example server
+POST http://localhost:8080/api/v1/auth/sign-up
+Content-Type: application/json
+
+{
+  "name": "name",
+  "lastName": "lastName",
+  "email": "email@gmail.com",
+  "password": "password",
+  "phoneNum": "phone_num",
+  "role": 1
+}
+###
