@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
+import java.security.SecureRandom;
+import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +18,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-    private static final String SECRET_KEY   = "TheMostSecureKeyEver";
+//    private static final String SECRET_KEY   = "TheMostSecureKeyEver";
 
     public String extractUsername(String token){return extractClaim(token, Claims::getSubject);}
 
@@ -62,6 +64,10 @@ public class JwtService {
     }
 
     private Key getSignInKey(){
+        SecureRandom random = new SecureRandom();
+        byte[] key = new byte[64];
+        random.nextBytes(key);
+        String SECRET_KEY = Base64.getEncoder().encodeToString(key);
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
