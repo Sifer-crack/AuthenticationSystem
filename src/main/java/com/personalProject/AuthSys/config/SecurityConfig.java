@@ -11,11 +11,13 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SecurityConfig {
+public class SecurityConfig implements WebMvcConfigurer {
     private final JwtAuthenticationFilter jwtAuth;
     private final AuthenticationProvider authenticationProvider;
 
@@ -31,5 +33,15 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuth, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    // CORS configuration
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:5173")  // The URL of your frontend
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("*")
+                .allowCredentials(true);  // Allow cookies and credentials if needed
     }
 }
